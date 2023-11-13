@@ -23,6 +23,9 @@ class ProdutosController extends Controller
 
     public function delete (Request $request)
     {
-
+        $id = $request->id;
+        $buscaRegistro = Produto::find($id);
+        $buscaRegistro->delete();
+        return response()->json(['success' => true]);
     }
 }
