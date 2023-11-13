@@ -205,6 +205,7 @@
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <script src="{{ asset('js/color-modes.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
     <script src="{{ asset('js/projeto.js') }}"></script>
 </body>
