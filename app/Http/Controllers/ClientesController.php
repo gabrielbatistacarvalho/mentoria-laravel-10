@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequestCliente;
 use App\Models\Cliente;
+use App\Models\Componentes;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -29,5 +31,20 @@ class ClientesController extends Controller
         $buscaRegistro->delete();
         
         return response()->json(['success' => true]);
+    }
+
+    public function cadastrarCliente (FormRequestCliente $request)
+    {
+        if ($request->method() == "POST") {
+            $data          = $request->all();
+            $componentes   = new Componentes();
+            $data['cpf']   = $componentes->formatacaoMascaraCpf($data['cpf']);
+            $data['senha'] = '123456';
+            Cliente::create($data);
+
+            return redirect()->route('cliente.index');
+        }
+
+        return view('pages.clientes.create');
     }
 }

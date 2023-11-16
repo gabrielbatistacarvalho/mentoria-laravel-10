@@ -29,4 +29,4 @@ function deleteRegistroPaginacao(rotaUrl, idDoRegistro) {
 
 $('#mascara_valor').mask('#.##0,00', { reverse: true });
 
-$('#mascara_cpf').mask('###########000.000.000-00', { reverse: false });
+$('#mascara_cpf').mask('###########000.000.000-00', { reverse: true });

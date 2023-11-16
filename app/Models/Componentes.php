@@ -17,4 +17,12 @@ class Componentes extends Model
         
         return $dados;
     }
+
+    public function formatacaoMascaraCpf($cpf)
+    {
+        $dados = str_replace('.', '', $cpf);
+        $dados = str_replace('-', '', $cpf);
+
+        return $dados;
+    }
 }
