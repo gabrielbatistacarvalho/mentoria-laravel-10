@@ -33,7 +33,7 @@
                                 <td>{{ $cliente->cpf }}</td>
                                 <td>{{ $cliente->email }}</td>
                                 <td>
-                                    <a href="" class="btn btn-light btn-sm">
+                                    <a href="{{ route('atualizar.cliente', $cliente->id) }}" class="btn btn-light btn-sm">
                                         Editar
                                     </a>
                                     <meta name="csrf-token" content="{{ csrf_token() }}"/>

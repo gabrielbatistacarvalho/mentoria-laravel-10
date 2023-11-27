@@ -36,7 +36,9 @@ Route::prefix('clientes')->group(function () {
     // Create produto
     Route::get('/cadastrarCliente', [ClientesController::class, 'cadastrarCliente'])->name('cadastrar.cliente');
     Route::post('/cadastrarCliente', [ClientesController::class, 'cadastrarCliente'])->name('cadastrar.cliente');
-    
+    // Update Cliente
+    Route::get('/atualizarCliente/{id}', [ClientesController::class, 'atualizarCliente'])->name('atualizar.produto');
+    Route::put('/atualizarCliente/{id}', [ClientesController::class, 'atualizarCliente'])->name('atualizar.cliente');
     // Delete Cliente
     Route::delete('/delete', [ClientesController::class, 'delete'])->name('cliente.delete');
 });

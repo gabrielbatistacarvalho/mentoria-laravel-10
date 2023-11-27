@@ -9,20 +9,19 @@ class Componentes extends Model
 {
     use HasFactory;
 
-    public function formatacaoMascaraDinheiroDecimal($valorParaFormatar)
+    public function formatacaoMascaraDinheiroDecimal($valor)
     {
-        $tamanho = strlen($valorParaFormatar);
-        $dados   = str_replace('.', '', $valorParaFormatar);
-        $dados   = str_replace(',', '.', $dados);
+        $valor   = str_replace('.', '', $valor);
+        $valor   = str_replace(',', '.', $valor);
         
-        return $dados;
+        return $valor;
     }
 
     public function formatacaoMascaraCpf($cpf)
     {
-        $dados = str_replace('.', '', $cpf);
-        $dados = str_replace('-', '', $cpf);
+        $cpf = str_replace('.', '', $cpf);
+        $cpf = str_replace('-', '', $cpf);
 
-        return $dados;
+        return $cpf;
     }
 }
