@@ -20,6 +20,7 @@ class FormRequestProduto extends FormRequest
                 'valor' => 'required'
             ];
         }
+        
         return $request;
     }
 }
