@@ -12,7 +12,8 @@ class Cliente extends Model
     protected $fillable = [
         'cpf',
         'nome',
-        'email'
+        'email',
+        'senha'
     ];
 
     public function getClientesPesquisarIndex (string $search = '') 

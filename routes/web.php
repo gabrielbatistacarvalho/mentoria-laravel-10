@@ -21,17 +21,24 @@ Route::get('/', function () {
 
 Route::prefix('produtos')->group(function () {
     Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');
-    // Cadastro Create
+    // Create Produto
     Route::get('/cadastrarProduto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar.produto');
     Route::post('/cadastrarProduto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar.produto');
-    //Cadastro Update
+    // Update Produto
     Route::get('/atualizarProduto/{id}', [ProdutosController::class, 'atualizarProduto'])->name('atualizar.produto');
     Route::put('/atualizarProduto/{id}', [ProdutosController::class, 'atualizarProduto'])->name('atualizar.produto');
-
+    // Delete Produto
     Route::delete('/delete', [ProdutosController::class, 'delete'])->name('deletar.produto');
 });
 
 Route::prefix('clientes')->group(function () {
     Route::get('/', [ClientesController::class, 'index'])->name('cliente.index');
+    // Create produto
+    Route::get('/cadastrarCliente', [ClientesController::class, 'cadastrarCliente'])->name('cadastrar.cliente');
+    Route::post('/cadastrarCliente', [ClientesController::class, 'cadastrarCliente'])->name('cadastrar.cliente');
+    // Update Cliente
+    Route::get('/atualizarCliente/{id}', [ClientesController::class, 'atualizarCliente'])->name('atualizar.produto');
+    Route::put('/atualizarCliente/{id}', [ClientesController::class, 'atualizarCliente'])->name('atualizar.cliente');
+    // Delete Cliente
     Route::delete('/delete', [ClientesController::class, 'delete'])->name('cliente.delete');
 });
